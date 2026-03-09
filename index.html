@@ -28,7 +28,7 @@
                             200: '#fde68a',
                             300: '#fcd34d',
                             400: '#fbbf24',
-                            500: '#f59e0b', /* Laranja/Âmbar da Logo */
+                            500: '#f59e0b',
                             600: '#d97706',
                             700: '#b45309',
                             800: '#92400e',
@@ -162,13 +162,14 @@
         
         .portfolio-item {
             overflow: hidden;
+            display: block; /* Garante que os itens do masonry fiquem corretos */
         }
         
-        .portfolio-item img {
+        .portfolio-item img, .portfolio-item video {
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .portfolio-item:hover img {
+        .portfolio-item:hover img, .portfolio-item:hover video {
             transform: scale(1.05);
         }
         
@@ -541,53 +542,69 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 md:auto-rows-[300px] lg:auto-rows-[350px] max-w-7xl mx-auto">
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 max-w-7xl mx-auto">
                 
-                <div class="reveal lg:col-span-2 lg:row-span-2 portfolio-item rounded-3xl overflow-hidden group relative shadow-lg aspect-[4/3] md:aspect-auto">
-                    <img src="img/portfolio-1.jpg" 
-                         alt="Profissionais realizando pintura predial em altura com técnica de rapel" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                <div class="reveal portfolio-item rounded-3xl overflow-hidden group relative shadow-lg break-inside-avoid w-full">
+                    <video autoplay loop muted playsinline class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                        <source src="img/portfolio-1.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-                        <span class="inline-block bg-primary-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-3">Pintura Predial</span>
-                        <h4 class="text-white text-3xl font-bold tracking-tight">Restauração e Pintura em Altura</h4>
-                        <p class="text-slate-300 text-base mt-2 font-light">Acesso por corda (rapel) com equipe certificada na NR-35, garantindo segurança e agilidade.</p>
+                        <span class="inline-block bg-primary-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-3">Piso Industrial</span>
+                        <h4 class="text-white text-2xl font-bold tracking-tight">Pintura Epóxi</h4>
+                        <p class="text-slate-300 text-sm mt-2 font-light">Aplicação de resina de alta resistência e durabilidade.</p>
                     </div>
                 </div>
                 
-                <div class="reveal delay-100 portfolio-item rounded-3xl overflow-hidden group relative shadow-lg aspect-[4/3] md:aspect-auto">
-                    <img src="img/portfolio-2.jpg" 
-                         alt="Vista aérea de pintura de fachada comercial e escolar" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+                <div class="reveal delay-100 portfolio-item rounded-3xl overflow-hidden group relative shadow-lg break-inside-avoid w-full">
+                    <img src="img/portfolio-2.jpg" alt="Pintura Predial em Altura" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <span class="inline-block bg-secondary-500 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mb-2">Comercial</span>
+                        <span class="inline-block bg-secondary-500 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mb-2">Pintura Predial</span>
+                        <h4 class="text-white text-xl font-bold">Restauração em Altura</h4>
+                        <p class="text-slate-300 text-sm mt-1 font-medium">Acesso por corda (NR-35).</p>
+                    </div>
+                </div>
+                
+                <div class="reveal delay-200 portfolio-item rounded-3xl overflow-hidden group relative shadow-lg break-inside-avoid w-full">
+                    <img src="img/portfolio-3.jpg" alt="Pintura Comercial" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="inline-block bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mb-2">Comercial</span>
                         <h4 class="text-white text-xl font-bold">Fachadas Comerciais</h4>
-                        <p class="text-slate-300 text-sm mt-1 font-medium">Pintura e revitalização de centros comerciais.</p>
+                        <p class="text-slate-300 text-sm mt-1 font-medium">Pintura e revitalização de espaços corporativos.</p>
                     </div>
                 </div>
                 
-                <div class="reveal delay-200 portfolio-item rounded-3xl overflow-hidden group relative shadow-lg aspect-[4/3] md:aspect-auto">
-                    <img src="img/portfolio-3.jpg" 
-                         alt="Pintura residencial e acabamento externo" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+                <div class="reveal portfolio-item rounded-3xl overflow-hidden group relative shadow-lg break-inside-avoid w-full">
+                    <img src="img/portfolio-4.jpg" alt="Pintura Residencial" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <span class="inline-block bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mb-2">Residencial</span>
+                        <span class="inline-block bg-amber-500 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mb-2">Residencial</span>
                         <h4 class="text-white text-xl font-bold">Projetos Residenciais</h4>
-                        <p class="text-slate-300 text-sm mt-1 font-medium">Acabamentos finos em áreas externas e internas.</p>
+                        <p class="text-slate-300 text-sm mt-1 font-medium">Acabamentos finos externos e internos.</p>
                     </div>
                 </div>
-                
-                <div class="reveal delay-300 portfolio-item md:col-span-3 rounded-3xl overflow-hidden group relative shadow-lg aspect-[4/3] md:aspect-auto">
-                    <img src="img/portfolio-4.jpg" 
-                         alt="Pintura de alta durabilidade em piso de quadra poliesportiva" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+
+                <div class="reveal delay-100 portfolio-item rounded-3xl overflow-hidden group relative shadow-lg break-inside-avoid w-full">
+                    <img src="img/portfolio-5.jpg" alt="Pintura de Quadra" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="inline-block bg-purple-500 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded mb-2">Pisos e Quadras</span>
+                        <h4 class="text-white text-xl font-bold">Quadras Esportivas</h4>
+                        <p class="text-slate-300 text-sm mt-1 font-medium">Alta resistência e durabilidade ao tráfego.</p>
+                    </div>
+                </div>
+
+                <div class="reveal delay-200 portfolio-item rounded-3xl overflow-hidden group relative shadow-lg break-inside-avoid w-full">
+                    <video autoplay loop muted playsinline class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+                        <source src="img/portfolio-6.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-                        <span class="inline-block bg-amber-500 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-3">Pisos e Quadras</span>
-                        <h4 class="text-white text-2xl font-bold tracking-tight">Pintura de Quadras Esportivas</h4>
-                        <p class="text-slate-300 text-base mt-2 font-light max-w-4xl">Aplicação de tintas de alta resistência e durabilidade para pisos industriais e quadras poliesportivas.</p>
+                        <span class="inline-block bg-rose-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded mb-3">Acabamento Premium</span>
+                        <h4 class="text-white text-2xl font-bold tracking-tight">Porcelanato Líquido</h4>
+                        <p class="text-slate-300 text-sm mt-2 font-light">Nivelamento impecável com brilho espelhado de altíssima qualidade.</p>
                     </div>
                 </div>
                 
